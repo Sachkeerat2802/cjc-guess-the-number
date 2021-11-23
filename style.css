@@ -1,0 +1,194 @@
+@import url("https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap");
+
+/*///////////////////////////
+/////       RESET       /////
+///////////////////////////*/
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+h1,
+h2,
+p {
+    margin: 0;
+}
+
+/*///////////////////////////
+///   CUSTOM PROPERTIES   ///
+///////////////////////////*/
+
+:root {
+    --clr-dark: #222222;
+    --clr-light: #eeeeee;
+
+    --ff-primary: "Press Start 2P", sans-serif;
+}
+
+/*///////////////////////////
+///   UTILITY CLASSES     ///
+///////////////////////////*/
+
+.flow-content > * + * {
+    margin-top: 1.25rem;
+}
+
+/*///////////////////////////
+///    GENERAL STYLES     ///
+///////////////////////////*/
+
+body {
+    margin: 0;
+    font-family: var(--ff-primary);
+    background-color: var(--clr-dark);
+    color: var(--clr-light);
+}
+
+section {
+    padding: 2rem 0.5rem;
+}
+
+.btn {
+    display: inline-block;
+    background-color: var(--clr-light);
+    color: var(--clr-dark);
+    border: none;
+    cursor: pointer;
+    font-size: 1.25rem;
+    font-family: inherit;
+    padding: 0.6em 1.2em;
+}
+
+.btn:hover {
+    opacity: 0.75;
+}
+
+@media (min-width: 50rem) {
+    .btn {
+        padding: 1em 1.75em;
+    }
+}
+
+/*///////////////////////////
+///    SPECIFIC STYLES    ///
+///////////////////////////*/
+
+/*///    PRETEXT    ///*/
+
+.pretext {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1.25rem;
+    text-align: center;
+    padding: 2rem;
+}
+
+.pretext__limit {
+    font-size: 0.875rem;
+}
+
+@media (min-width: 50rem) {
+    .pretext {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+
+/*///    HERO    ///*/
+
+.hero {
+    border-bottom: 8px solid var(--clr-light);
+    padding-bottom: 5rem;
+    position: relative;
+    text-align: center;
+}
+
+.hero__title {
+    font-size: 2rem;
+}
+
+.hero__number {
+    width: 5rem;
+    background-color: var(--clr-light);
+    color: var(--clr-dark);
+    font-size: 3rem;
+    padding: 1rem;
+    position: absolute;
+    margin: 0 auto;
+    top: 80%;
+    left: 0;
+    right: 0;
+}
+
+@media (min-width: 33rem) {
+    .hero__number {
+        top: 75%;
+    }
+}
+
+@media (min-width: 50rem) {
+    .hero {
+        padding-bottom: 7.5rem;
+    }
+
+    .hero__title {
+        font-size: 2.5rem;
+    }
+
+    .hero__number {
+        font-size: 3.75rem;
+        width: 9.375rem;
+        padding: 2rem;
+        top: 71%;
+    }
+}
+
+/*///    POSTTEXT    ///*/
+
+.posttext {
+    margin-top: 2.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 4rem;
+    text-align: center;
+}
+
+.posttext__input {
+    display: block;
+    background: none;
+    border: 4px solid var(--clr-light);
+    color: var(--clr-light);
+    font-family: inherit;
+    font-size: 2rem;
+    padding: 0.75rem 1.5rem;
+    width: 15rem;
+    text-align: center;
+}
+
+@media (min-width: 50rem) {
+    .posttext {
+        margin-top: 7.5rem;
+        flex-direction: row;
+        gap: 10rem;
+    }
+
+    .posttext__right {
+        text-align: left;
+        font-size: 1.25rem;
+    }
+
+    .posttext__input {
+        font-size: 3.125rem;
+        padding: 1.5rem;
+    }
+
+    .posttext__label {
+        margin-bottom: 5rem;
+    }
+}
