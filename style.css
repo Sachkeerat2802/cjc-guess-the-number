@@ -23,6 +23,7 @@ p {
 :root {
     --clr-dark: #222222;
     --clr-light: #eeeeee;
+    --test: #18c418;
 
     --ff-primary: "Press Start 2P", sans-serif;
 }
@@ -175,12 +176,26 @@ section {
     .posttext {
         margin-top: 7.5rem;
         flex-direction: row;
-        gap: 10rem;
+        gap: unset;
     }
 
     .posttext__right {
-        text-align: left;
+        width: 50%;
         font-size: 1.25rem;
+        text-align: left;
+    }
+
+    .posttext__left {
+        width: 50%;
+    }
+
+    .posttext__container--right {
+        margin-left: 5rem;
+    }
+
+    .posttext__container--left {
+        width: max-content;
+        margin: 0 7.5rem 0 auto;
     }
 
     .posttext__input {
