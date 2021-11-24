@@ -11,7 +11,7 @@ const displayMessage = (element, message) => {
 
 const toggleStyles = (type) => {
     document.querySelector("body").style.backgroundColor =
-        type === "win" ? "#00ff00" : type === "loss" ? "#ff0000" : "#222222";
+        type === "win" ? "#15b615" : type === "loss" ? "#ff0000" : "#222222";
     document.querySelector(".hero__number").style.width =
         type === "win" ? "15rem" : null;
     displayMessage(
@@ -36,6 +36,8 @@ document.querySelector(".posttext__btn").addEventListener("click", function () {
         displayMessage(".posttext__label", "Reset to Play Again!");
     } else if (!guess) {
         displayMessage(".posttext__label", "⛔️ Enter a Number");
+    } else if (guess > 20 || guess < 0) {
+        displayMessage(".posttext__label", "⛔️ Number can be from 0 to 20!");
     } else if (guess !== secretNumber) {
         if (score > 1) {
             displayMessage(
@@ -60,6 +62,14 @@ document.querySelector(".posttext__btn").addEventListener("click", function () {
         toggleStyles("win");
     }
 });
+
+document
+    .querySelector(".posttext__input")
+    .addEventListener("keyup", function (e) {
+        if (e.key === "Enter") {
+            document.querySelector(".posttext__btn").click();
+        }
+    });
 
 document.querySelector(".pretext__btn").addEventListener("click", function () {
     score = 20;
